@@ -1,4 +1,4 @@
-# Mi Proyecto en Microsoft Azure
+#https://t  Mi Proyecto en Microsoft Azure
 
 ¡Bienvenido a mi proyecto en Microsoft Azure! 
 
@@ -31,7 +31,9 @@ El propósito principal de utilizar Microsoft Azure como plataforma de nube es a
 
 ## Configuración 
 
-Asegúrate de configurar las siguientes variables de entorno: - `AZURE_STORAGE_CONNECTION_STRING`: [Tu cadena de conexión para el almacenamiento en Azure] - `AZURE_DATABASE_CONNECTION_STRING`: [Tu cadena de conexión para la base de datos en Azure] - [Otras variables de entorno necesarias] 
+Asegúrate de configurar las siguientes variables de entorno: - `AZURE_STORAGE_CONNECTION_STRING`: 
+DefaultEndpointsProtocol=[protocolo];AccountName=[nombre de la cuenta];AccountKey=[clave de la cuenta];EndpointSuffix=[sufijo del punto de conexión]
+ `AZURE_DATABASE_CONNECTION_STRING`: Server=tcp:[nombre-del-servidor].database.windows.net;Database=[nombre-de-la-base-de-datos];User ID=[nombre-de-usuario];Password=[contraseña];Trusted_Connection=False;Encrypt=True;
 
 ## Instalación Para ejecutar este proyecto localmente, sigue estos pasos: 1. Clona este repositorio. 2. [Instrucciones adicionales de instalación, si las hay.] 
 
