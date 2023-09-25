@@ -1,6 +1,7 @@
-# Mi Proyecto en Microsoft Azure
+# Mi proyecto en Azure DevOps 
 
 ¡Bienvenido a mi proyecto en Microsoft Azure! 
+
 
 ## Descripción
 
@@ -27,25 +28,40 @@ El propósito principal de utilizar Microsoft Azure como plataforma de nube es a
 
 10. **Continuidad del Negocio**: Ofrecer opciones de recuperación ante desastres y alta disponibilidad para garantizar la continuidad del negocio.
 
-## Tecnologías Utilizadas - Azure App Service - Azure SQL Database - Azure Functions
+-----------------------------------------
+## Tecnologías Utilizadas
+-----------------------------------------
+- Azure App Service
+- Azure SQL Database
+- Azure Functions
 
-## Configuración 
+-----------------------------------------
+## Configuración
+-----------------------------------------
+Asegúrate de configurar las siguientes variables de entorno:  
 
-Asegúrate de configurar las siguientes variables de entorno: - `AZURE_STORAGE_CONNECTION_STRING`: 
+- `AZURE_STORAGE_CONNECTION_STRING`: 
 ```DefaultEndpointsProtocol=[protocolo];AccountName=[nombre de la cuenta];AccountKey=[clave de la cuenta];EndpointSuffix=[sufijo del punto de conexión]```
- `AZURE_DATABASE_CONNECTION_STRING`: ```Server=tcp:[nombre-del-servidor].database.windows.net;Database=[nombre-de-la-base-de-datos];User ID=[nombre-de-usuario];Password=[contraseña];Trusted_Connection=False;Encrypt=True;```
+- `AZURE_DATABASE_CONNECTION_STRING`: ```Server=tcp:[nombre-del-servidor].database.windows.net;Database=[nombre-de-la-base-de-datos];User ID=[nombre-de-usuario];Password=[contraseña];Trusted_Connection=False;Encrypt=True;```
 
-## Instalación 
+-----------------------------------------
+## Instalación
+-----------------------------------------
 
 Para ejecutar este proyecto localmente, sigue estos pasos: 
 
 1. Clona este repositorio. 
 2. [Instrucciones adicionales de instalación, si las hay.] 
 
-## Uso 
+-----------------------------------------
+## Uso
+-----------------------------------------
 Describe cómo usar tu proyecto aquí. 
 
-## Contribución Si deseas contribuir a este proyecto, sigue los pasos: 
+-----------------------------------------
+## Contribuciones
+-----------------------------------------
+Si deseas contribuir a este proyecto, sigue los pasos: 
 
 1. Fork este repositorio. 
 2. Crea una rama para tu característica (`git checkout -b caracteristica-nueva`). 
@@ -53,8 +69,45 @@ Describe cómo usar tu proyecto aquí.
 4. Sube tus cambios (`git push origin caracteristica-nueva`). 
 5. Abre una solicitud de extracción. 
 
-## Créditos Agradecimientos especiales a Carlos Alberto Ibarra Perales. 
+-----------------------------------------
+## Créditos 
+-----------------------------------------
 
-## Licencia Este proyecto está bajo la licencia Linux GNU. 
+Este proyecto ha sido posible gracias al arduo trabajo y la colaboración de diversas personas y recursos. Queremos expresar nuestro agradecimiento a:
 
-Consulta el archivo `LICENSE` para obtener más detalles.
+Equipo de Desarrollo:
+- [Nombre del Desarrollador 1]
+- [Nombre del Desarrollador 2]
+- [Nombre del Desarrollador 3]
+
+Diseño Gráfico:
+- [Nombre del Diseñador Gráfico 1]
+- [Nombre del Diseñador Gráfico 2]
+
+Colaboradores Externos:
+- [Nombre del Colaborador 1]
+- [Nombre del Colaborador 2]
+
+Agradecimientos Especiales:
+- [Nombre de la Persona o Entidad Especial 1]
+- [Nombre de la Persona o Entidad Especial 2]
+
+Recursos y Herramientas Utilizados:
+- [Nombre de la Herramienta 1]
+- [Nombre de la Herramienta 2]
+
+Agradecemos a todos los que han contribuido de alguna manera a este proyecto, ya sea a través de su tiempo, conocimientos o recursos. Sin su apoyo, este proyecto no habría sido posible.
+
+¡Gracias a todos por ser parte de este logro!
+
+Carlos Alberto Ibarra Perales 
+
+-----------------------------------------
+## Licencia
+-----------------------------------------
+
+Este proyecto está bajo la licencia Linux GNU. 
+
+-----------------------------------------
+Consulta el archivo `LICENSE`  para obtener más detalles.
+-----------------------------------------
