@@ -27,13 +27,18 @@ El propósito principal de utilizar Microsoft Azure como plataforma de nube es a
 
 10. **Continuidad del Negocio**: Ofrecer opciones de recuperación ante desastres y alta disponibilidad para garantizar la continuidad del negocio.
 
-## Tecnologías Utilizadas - Azure App Service - Azure SQL Database - Azure Functions
+## Tecnologías Utilizadas 
+- Azure App Service
+- Azure SQL Database
+- Azure Functions
 
 ## Configuración 
 
-Asegúrate de configurar las siguientes variables de entorno: - `AZURE_STORAGE_CONNECTION_STRING`: 
+Asegúrate de configurar las siguientes variables de entorno: 
+
+- `AZURE_STORAGE_CONNECTION_STRING`: 
 ```DefaultEndpointsProtocol=[protocolo];AccountName=[nombre de la cuenta];AccountKey=[clave de la cuenta];EndpointSuffix=[sufijo del punto de conexión]```
- `AZURE_DATABASE_CONNECTION_STRING`: ```Server=tcp:[nombre-del-servidor].database.windows.net;Database=[nombre-de-la-base-de-datos];User ID=[nombre-de-usuario];Password=[contraseña];Trusted_Connection=False;Encrypt=True;```
+- `AZURE_DATABASE_CONNECTION_STRING`: ```Server=tcp:[nombre-del-servidor].database.windows.net;Database=[nombre-de-la-base-de-datos];User ID=[nombre-de-usuario];Password=[contraseña];Trusted_Connection=False;Encrypt=True;```
 
 ## Instalación 
 
@@ -45,7 +50,8 @@ Para ejecutar este proyecto localmente, sigue estos pasos:
 ## Uso 
 Describe cómo usar tu proyecto aquí. 
 
-## Contribución Si deseas contribuir a este proyecto, sigue los pasos: 
+## Contribución 
+Si deseas contribuir a este proyecto, sigue los pasos: 
 
 1. Fork este repositorio. 
 2. Crea una rama para tu característica (`git checkout -b caracteristica-nueva`). 
@@ -53,8 +59,9 @@ Describe cómo usar tu proyecto aquí.
 4. Sube tus cambios (`git push origin caracteristica-nueva`). 
 5. Abre una solicitud de extracción. 
 
-## Créditos Agradecimientos especiales a Carlos Alberto Ibarra Perales. 
+## Créditos 
+Agradecimientos especiales a _Carlos Alberto Ibarra Perales_
+## Licencia 
+Este proyecto está bajo la licencia Linux GNU. 
 
-## Licencia Este proyecto está bajo la licencia Linux GNU. 
-
-Consulta el archivo `LICENSE` para obtener más detalles.
+Consulta el archivo `LICENSE`  para obtener más detalles.
