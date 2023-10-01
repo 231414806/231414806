@@ -1,6 +1,5 @@
 **Tabla en hoja de cálculo (Excel):**
 
-```markdown
 |   Año   | Hogares en México que cuentan con computadora | Hogares en México que cuentan con conexión a Internet |
 | ------- | -------------------------------------------- | ----------------------------------------------------- |
 |  2001   |                  2,757,980                   |                       1,454,744                        |
@@ -9,11 +8,11 @@
 |  2008   |                  7,127,054                   |                       3,751,870                        |
 |  2009   |                  7,460,463                   |                       5,119,437                        |
 |  2016   |                15,184,257                   |                      15,658,535                        |
-```
+
 
 **Tabla en documento de procesador de textos (Word):**
 
-```markdown
+
 |  Año  | Hogares en México que cuentan con computadora | Hogares en México que cuentan con conexión a Internet |
 | ----- | -------------------------------------------- | ----------------------------------------------------- |
 | 2001  |                  2,757,980                   |                       1,454,744                        |
@@ -22,7 +21,6 @@
 | 2008  |                  7,127,054                   |                       3,751,870                        |
 | 2009  |                  7,460,463                   |                       5,119,437                        |
 | 2016  |                15,184,257                   |                      15,658,535                        |
-```
 
 # Mi proyecto en Azure DevOps 
 
