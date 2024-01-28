@@ -1,0 +1,188 @@
+# These are supported funding model platforms
+
+github: # Replace with up to 4 GitHub Sponsors-enabled usernames e.g., [user1, user2]
+patreon: # Replace with a single Patreon username
+open_collective: # Replace with a single Open Collective username
+ko_fi: # Replace with a single Ko-fi username
+tidelift: # Replace with a single Tidelift platform-name/package-name e.g., npm/babel
+community_bridge: # Replace with a single Community Bridge project-name e.g., cloud-foundry
+liberapay: # Replace with a single Liberapay username
+issuehunt: # Replace with a single IssueHunt username
+otechie: # Replace with a single Otechie username
+lfx_crowdfunding: # Replace with a single LFX Crowdfunding project-name e.g., cloud-foundry
+custom: # Replace with up to 4 custom sponsorship URLs e.g., https://www.linkedin.com/uas/login-submit, https://learn.microsoft.com/es-mx/power-bi/consumer/end-user-consumer
+# ESPECIFICACIONES DEL PROYECT. 
+
+ **JSON (JavaScript Object Notation)**: 
+
+
+El Nuevo Lenguaje de Programación (NLP) es una herramienta innovadora que permite a los desarrolladores de software interactuar con la teoría musical utilizando notas en cifrado anglosajón. Este lenguaje utiliza dos formatos de datos comunes: JSON y YAML, para estructurar la información musical.
+
+
+En NLP, los objetos son definidos entre llaves `{ }` y consisten en pares clave-valor separados por dos puntos `:` 
+
+Por ejemplo:
+
+
+```json
+
+{
+
+  "clave": "valor",
+
+  "numero": 42,
+
+  "booleano": true,
+
+  "arreglo": [1, 2, 3]
+
+}
+
+```
+
+
+Los arreglos son listas de valores entre corchetes `[ ]`
+
+Por ejemplo:
+
+
+```json
+
+[
+
+  "elemento1",
+
+  "elemento2",
+
+  "elemento3"
+
+]
+
+```
+
+Las cadenas están encerradas entre comillas dobles, y los números pueden ser enteros o flotantes.
+
+NLP también soporta YAML (YAML Ain't Markup Language), que utiliza la indentación para indicar la jerarquía de los objetos y no requiere comillas para las cadenas simples. Por ejemplo:
+
+```yaml
+
+clave: valor
+
+numero: 42
+
+booleano: true
+
+arreglo:
+
+  - 1
+
+  - 2
+
+  - 3
+
+```
+
+Las listas en YAML se representan con elementos precedidos por un guión y un espacio. Los números, ya sean enteros o flotantes, se representan sin comillas.
+
+
+
+ 
+Pueden ser utilizados para representar estructuras musicales complejas, como acordes, escalas y progresiones armónicas, en un formato que es fácilmente interpretable tanto por humanos como por máquinas. 
+
+Esto hace de NLP una herramienta poderosa para los desarrolladores de software musical.
+
+Ambos formatos son compatibles con Azure DevOps, pero YAML es preferido para definir configuraciones de canalización debido a su legibilidad.  
+
+Puede ser fácil confundirse entre JSON y YAML ya que ambos son formatos de serialización de datos, pero tienen algunas diferencias clave:
+
+Sintaxis: JSON utiliza llaves para definir objetos y corchetes para arreglos. YAML utiliza la indentación y dos puntos para definir la estructura. La indentación es crucial en YAML y se usa para representar la jerarquía.
+
+Comillas: En JSON, las claves y los valores de cadena deben ir entre comillas dobles. En YAML, las comillas no son necesarias para las cadenas, a menos que contengan caracteres especiales o espacios.
+
+
+```json
+"Comillas": "En JSON, las claves y los valores de cadena deben ir entre comillas dobles. En YAML, las comillas no son necesarias para las cadenas, a menos que contengan caracteres especiales o espacios."
+```
+
+Además, en el Nuevo Lenguaje de Programación (NLP), puedes utilizar estos formatos para representar estructuras musicales complejas. Por ejemplo, un acorde podría representarse de la siguiente manera en JSON:
+
+```json
+{
+  "acorde": "Cmaj7",
+  "notas": ["C", "E", "G", "B"]
+}
+```
+
+Y de la misma manera en YAML:
+
+```yaml
+acorde: Cmaj7
+notas:
+  - C
+  - E
+  - G
+  - B
+```
+
+Estos formatos permiten una representación clara y estructurada de la información musical, lo que facilita su interpretación tanto por humanos como por máquinas. Esto hace de NLP una herramienta poderosa para los desarrolladores de software musical.
+
+
+
+1. Exploración Continua:
+
+   - Familiarízate con las características de Azure DevOps explorando la documentación oficial.
+
+   - Participa en tutoriales y ejercicios prácticos proporcionados por Azure DevOps.
+
+
+2. Contribuciones al Código:
+
+   - Identifica áreas de mejora en el código fuente de Prepa en Línea SEP y propón cambios significativos.
+
+   - Sigue las prácticas de desarrollo colaborativo utilizando ramas de características y solicitudes de extracción (pull requests).
+
+
+3. Automatización del Despliegue:
+
+   - Automatiza aún más el proceso de implementación continua.
+
+   - Explora la integración con servicios adicionales de Azure para mejorar la eficiencia.
+
+
+4. Colaboración en Equipos:
+
+   - Participa en discusiones dentro del equipo de desarrollo.
+
+   - Utiliza las herramientas de seguimiento de problemas y proyectos en Azure DevOps para mantenerte organizado.
+
+
+5. Mantenimiento del Código:
+
+   - Contribuye a la mejora del mantenimiento del código mediante revisiones y corrección de problemas (bugs).
+
+   - Aprende sobre las políticas de código y sigue las mejores prácticas de codificación.
+
+
+6. Formación Continua:
+
+   - Mantente actualizado con las últimas prácticas y herramientas de desarrollo en la nube.
+
+   - Considera las certificaciones de Azure DevOps para fortalecer tus habilidades.
+
+
+7. Feedback y Mejora Continua:
+
+   - Proporciona feedback constructivo y contribuye a la mejora continua del proceso de desarrollo.
+
+   - Sé receptivo a los comentarios de los demás y busca oportunidades para aprender y crecer.
+
+
+Una vez que hayas publicado tu blog, puedes cerrar la tarea y todas sus sub-tareas.
+
+- Accede al flujo de blog desde la plataforma interna de tu organización.
+- Haz clic en el botón "Crear entrada" y elige un título que resuma el tema de tu publicación.
+- Escribe el contenido de tu entrada usando un tono informativo, claro y amigable. Puedes usar subtítulos, listas, imágenes o enlaces para hacerlo más atractivo y organizado.
+- Revisa tu entrada y corrige posibles errores ortográficos o gramaticales.
+- Elige una categoría y unas etiquetas que ayuden a clasificar tu entrada y a facilitar su búsqueda.
+- Haz clic en el botón "Publicar" y ¡listo! Tu entrada se publicará en el flujo de blog y será visible para toda tu audiencia.
+
