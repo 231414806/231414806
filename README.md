@@ -40,9 +40,10 @@ El propósito principal de utilizar Microsoft Azure como plataforma de nube es a
 -----------------------------------------
 Asegúrate de configurar las siguientes variables de entorno:  
 
-- `AZURE_STORAGE_CONNECTION_STRING`: 
-```DefaultEndpointsProtocol=[protocolo];AccountName=[nombre de la cuenta];AccountKey=[clave de la cuenta];EndpointSuffix=[sufijo del punto de conexión]```
-- `AZURE_DATABASE_CONNECTION_STRING`: ```Server=tcp:[nombre-del-servidor].database.windows.net;Database=[nombre-de-la-base-de-datos];User ID=[nombre-de-usuario];Password=[contraseña];Trusted_Connection=False;Encrypt=True;```
+```
+AZURE_STORAGE_CONNECTION_STRING:DefaultEndpointsProtocol=[protocolo];AccountName=[nombre de la cuenta];AccountKey=[clave de la cuenta];EndpointSuffix=[sufijo del punto de conexión]
+AZURE_DATABASE_CONNECTION_STRING:Server=tcp:[nombre-del-servidor].database.windows.net;Database=[nombre-de-la-base-de-datos];User ID=[nombre-de-usuario];Password=[contraseña];Trusted_Connection=False;Encrypt=True;
+```
 
 -----------------------------------------
 ## Instalación
