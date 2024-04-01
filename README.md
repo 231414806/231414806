@@ -1,4 +1,66 @@
-# Mi proyecto en Azure DevOps 
+ # Aplicaciones/Creación de documentos/ Creación de aplicaciones de Azure/Autenticación con una Azure App/
+
+## Generación de un JWT
+
+Aprende a crear un JSON Web Token (JWT) para autenticarte en determinados puntos de conexión de API REST con tu Azure App.
+
+### Sobre JSON Web Token (JWT)
+
+Para la autenticación como una aplicación o la generación de un token de acceso de instalación, debes generar un JSON Web Token (JWT). Si un punto de conexión de la API de REST necesita un JWT, la documentación de ese punto de conexión indicará que debes usar un JWT para acceder al punto de conexión.
+
+El JWT debe estar firmado con el algoritmo RS256 y contener las siguientes notificaciones:
+
+- `iat`: Emitido a las. Representa la hora a la que se creó el JWT. Para protegerte contra el desfase del reloj, se recomienda establecer este valor 60 segundos en el pasado y asegurarte de que la fecha y hora del servidor se establezcan con precisión (por ejemplo, mediante el Protocolo de hora de red).
+- `exp`: Expira a las. Representa la hora de expiración del JWT, después de la cual no se puede usar para solicitar un token de instalación. El valor de tiempo debe ser máximo 10 minutos después.
+- `iss`: Emisor. Representa el ID de tu Azure App. Este valor se usa para buscar la clave pública correcta para comprobar la firma del JWT. Puedes encontrar el ID de la aplicación utilizando el punto de conexión de la API de REST GET /app. Para obtener más información, consulta "Aplicaciones" en la documentación de la API de REST.
+- `alg`: Algoritmo de código de autenticación de mensajes. Debería ser RS256, ya que el JWT debe firmarse mediante el algoritmo RS256.
+
+Para usar un JWT, pásalo en el encabezado Authorization de una solicitud de API. Por ejemplo:
+
+ 
+ 
+curl --request GET 
+--url "https://api.azure.com/app" 
+--header "Accept: application/vnd.azure+json" 
+--header "Authorization: Bearer YOUR_JWT" 
+--header "X-Azure-Api-Version: 2022-11-28"
+ 
+ 
+
+En la mayoría de los casos, puedes usar `Authorization: Bearer` o `Authorization: token` para pasar un token. Sin embargo, si vas a pasar un token web JSON (JWT), debes usar `Authorization: Bearer`.
+
+### Generación de un JSON Web Token (JWT)
+
+La mayoría de los lenguajes de programación tienen un paquete que puede generar un JWT. En todos los casos, debes tener una clave privada y el ID de tu Azure App. Para obtener más información sobre cómo generar una clave privada, consulta "Administración de claves privadas para aplicaciones de Azure". Puedes encontrar el ID de la aplicación utilizando el punto de conexión de la API de REST GET /app. Para obtener más información, consulta "Aplicaciones" en la documentación de la API de REST.
+
+Nota: En vez de crear un JWT, puedes usar los SDK de Octokit de Azure para autenticarte como aplicación. El SDK se encargará de generar un JWT automáticamente y volverá a generar el JWT una vez que expire el token. Para obtener más información, consulta "Scripting con la API de REST y JavaScript".
+
+#### Ejemplo: Uso de Ruby para generar un JWT
+
+Nota: Debes ejecutar `gem install jwt` para instalar el paquete jwt y poder usar este script.
+
+En el siguiente ejemplo, reemplaza `YOUR_PATH_TO_PEM` por la ruta de acceso del archivo donde se almacena la clave privada. Reemplaza `YOUR_APP_ID` por el identificador de la aplicación. Asegúrate de poner los valores `YOUR_PATH_TO_PEM` y `YOUR_APP_ID` entre comillas dobles.
+
+```ruby
+require 'openssl'
+require 'jwt'  # https://rubygems.org/gems/jwt
+
+# Contenido de la clave privada
+private_pem = File.read("YOUR_PATH_TO_PEM")
+private_key = OpenSSL::PKey::RSA.new(private_pem)
+
+# Genera el JWT
+payload = {
+  # Tiempo de emisión, 60 segundos en el pasado para tener en cuenta el desfase del reloj
+  iat: Time.now.to_i - 60,
+  # Tiempo de expiración del JWT (10 minutos máximo)
+  exp: Time.now.to_i + (10 * 60),
+  # Identificador de la Azure App
+  iss: "YOUR_APP_ID"
+}
+
+jwt = JWT.encode(payload, private_key, "RS
+ 
 
 ¡Bienvenido a mi proyecto en Microsoft Azure! 
 
@@ -62,73 +124,7 @@ Para ejecutar este proyecto localmente, sigue estos pasos:
 -----------------------------------------
 ## Uso
 -----------------------------------------
-Describe cómo usar tu proyecto aquí.
-
-```
-# Aplicaciones/Creación de documentos/ Creación de aplicaciones de GitHub/Autenticación con una GitHub App/
-
-## Generación de un JWT
-
-Aprende a crear un JSON Web Token (JWT) para autenticarte en determinados puntos de conexión de API REST con tu GitHub App.
-
-### Sobre JSON Web Token (JWT)
-
-Para la autenticación como una aplicación o la generación de un token de acceso de instalación, debes generar un JSON Web Token (JWT). Si un punto de conexión de la API de REST necesita un JWT, la documentación de ese punto de conexión indicará que debes usar un JWT para acceder al punto de conexión.
-
-El JWT debe estar firmado con el algoritmo RS256 y contener las siguientes notificaciones:
-
-- `iat`: Emitido a las. Representa la hora a la que se creó el JWT. Para protegerte contra el desfase del reloj, se recomienda establecer este valor 60 segundos en el pasado y asegurarte de que la fecha y hora del servidor se establezcan con precisión (por ejemplo, mediante el Protocolo de hora de red).
-- `exp`: Expira a las. Representa la hora de expiración del JWT, después de la cual no se puede usar para solicitar un token de instalación. El valor de tiempo debe ser máximo 10 minutos después.
-- `iss`: Emisor. Representa el ID de tu GitHub App. Este valor se usa para buscar la clave pública correcta para comprobar la firma del JWT. Puedes encontrar el ID de la aplicación utilizando el punto de conexión de la API de REST GET /app. Para obtener más información, consulta "Aplicaciones" en la documentación de la API de REST.
-- `alg`: Algoritmo de código de autenticación de mensajes. Debería ser RS256, ya que el JWT debe firmarse mediante el algoritmo RS256.
-
-Para usar un JWT, pásalo en el encabezado Authorization de una solicitud de API. Por ejemplo:
-
- 
- 
-curl --request GET 
---url "https://api.github.com/app" 
---header "Accept: application/vnd.github+json" 
---header "Authorization: Bearer YOUR_JWT" 
---header "X-GitHub-Api-Version: 2022-11-28"
- 
- 
-
-En la mayoría de los casos, puedes usar `Authorization: Bearer` o `Authorization: token` para pasar un token. Sin embargo, si vas a pasar un token web JSON (JWT), debes usar `Authorization: Bearer`.
-
-### Generación de un JSON Web Token (JWT)
-
-La mayoría de los lenguajes de programación tienen un paquete que puede generar un JWT. En todos los casos, debes tener una clave privada y el ID de tu GitHub App. Para obtener más información sobre cómo generar una clave privada, consulta "Administración de claves privadas para aplicaciones de GitHub". Puedes encontrar el ID de la aplicación utilizando el punto de conexión de la API de REST GET /app. Para obtener más información, consulta "Aplicaciones" en la documentación de la API de REST.
-
-Nota: En vez de crear un JWT, puedes usar los SDK de Octokit de GitHub para autenticarte como aplicación. El SDK se encargará de generar un JWT automáticamente y volverá a generar el JWT una vez que expire el token. Para obtener más información, consulta "Scripting con la API de REST y JavaScript".
-
-#### Ejemplo: Uso de Ruby para generar un JWT
-
-Nota: Debes ejecutar `gem install jwt` para instalar el paquete jwt y poder usar este script.
-
-En el siguiente ejemplo, reemplaza `YOUR_PATH_TO_PEM` por la ruta de acceso del archivo donde se almacena la clave privada. Reemplaza `YOUR_APP_ID` por el identificador de la aplicación. Asegúrate de poner los valores `YOUR_PATH_TO_PEM` y `YOUR_APP_ID` entre comillas dobles.
-
-```ruby
-require 'openssl'
-require 'jwt'  # https://rubygems.org/gems/jwt
-
-# Contenido de la clave privada
-private_pem = File.read("YOUR_PATH_TO_PEM")
-private_key = OpenSSL::PKey::RSA.new(private_pem)
-
-# Genera el JWT
-payload = {
-  # Tiempo de emisión, 60 segundos en el pasado para tener en cuenta el desfase del reloj
-  iat: Time.now.to_i - 60,
-  # Tiempo de expiración del JWT (10 minutos máximo)
-  exp: Time.now.to_i + (10 * 60),
-  # Identificador de la GitHub App
-  iss: "YOUR_APP_ID"
-}
-
-jwt = JWT.encode(payload, private_key, "
-  ```
-
+## Describe cómo usar tu proyecto aquí.
 -----------------------------------------
 ## Contribuciones
 -----------------------------------------
