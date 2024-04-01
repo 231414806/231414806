@@ -18,13 +18,13 @@ El JWT debe estar firmado con el algoritmo RS256 y contener las siguientes notif
 Para usar un JWT, pásalo en el encabezado Authorization de una solicitud de API. Por ejemplo:
 
  
- 
+``` 
 curl --request GET 
 --url "https://api.azure.com/app" 
 --header "Accept: application/vnd.azure+json" 
 --header "Authorization: Bearer YOUR_JWT" 
 --header "X-Azure-Api-Version: 2022-11-28"
- 
+ ```
  
 
 En la mayoría de los casos, puedes usar `Authorization: Bearer` o `Authorization: token` para pasar un token. Sin embargo, si vas a pasar un token web JSON (JWT), debes usar `Authorization: Bearer`.
