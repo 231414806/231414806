@@ -3,7 +3,10 @@
  # Aplicaciones/Creación de documentos/ Creación de aplicaciones de Azure/Autenticación con una Azure App/
 
 [User Account](https://myaccount.microsoft.com/#) 
-[Avalonix module builders](https://myaccount.microsoft.com/groups/299e37d6-7446-47f4-a727-3c1da64d3414) 
+[Avalonix module builders](https://myaccount.microsoft.com/groups/299e37d6-7446-47f4-a727-3c1da64d3414)
+
+[Wiki Spaces Overview] 
+[notebook-t.atlassian.net](https://notebook-t.atlassian.net/wiki/spaces/IS/Overview) 
 
 ## Generación de un JWT
 
