@@ -5,7 +5,6 @@
 [User Account](https://myaccount.microsoft.com/#) 
 [Avalonix module builders](https://myaccount.microsoft.com/groups/299e37d6-7446-47f4-a727-3c1da64d3414)
 
-[ README.md ] 
 [notebook-t.atlassian.net](https://notebook-t.atlassian.net/wiki/spaces/IS/Overview) 
 
 ## Generación de un JWT
