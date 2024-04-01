@@ -64,6 +64,7 @@ Para ejecutar este proyecto localmente, sigue estos pasos:
 -----------------------------------------
 Describe cómo usar tu proyecto aquí.
 
+```
 # Aplicaciones/Creación de documentos/ Creación de aplicaciones de GitHub/Autenticación con una GitHub App/
 
 ## Generación de un JWT
@@ -126,7 +127,7 @@ payload = {
 }
 
 jwt = JWT.encode(payload, private_key, "
-  
+  ```
 
 -----------------------------------------
 ## Contribuciones
