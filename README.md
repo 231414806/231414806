@@ -44,12 +44,18 @@ En el siguiente ejemplo, reemplaza `YOUR_PATH_TO_PEM` por la ruta de acceso del 
 ```ruby
 require 'openssl'
 require 'jwt'  # https://rubygems.org/gems/jwt
+```
 
 # Contenido de la clave privada
+
+```
 private_pem = File.read("YOUR_PATH_TO_PEM")
 private_key = OpenSSL::PKey::RSA.new(private_pem)
+```
 
 # Genera el JWT
+
+```
 payload = {
   # Tiempo de emisión, 60 segundos en el pasado para tener en cuenta el desfase del reloj
   iat: Time.now.to_i - 60,
@@ -60,11 +66,7 @@ payload = {
 }
 
 jwt = JWT.encode(payload, private_key, "RS
- ```
-
-
-¡Bienvenido a mi proyecto en Microsoft Azure! 
-
+```
 
 ## Descripción
 
