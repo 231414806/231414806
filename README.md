@@ -1,6 +1,6 @@
 # Mi proyecto en Azure 
 
- # Aplicaciones/[Creación de documentos](https://github.com/3449708385/bootbase1.0.1/issues/2) / Creación de aplicaciones de Azure/Autenticación con una Azure App/[Avalonix module builders](https://myaccount.microsoft.com/groups/299e37d6-7446-47f4-a727-3c1da64d3414) 
+ # Aplicaciones/[Creación de documentos](https://github.com/3449708385/bootbase1.0.1/issues/2)/ Creación de aplicaciones de Azure/Autenticación con una Azure App/[Avalonix module builders](https://myaccount.microsoft.com/groups/299e37d6-7446-47f4-a727-3c1da64d3414) 
 
 [User account:](https://myaccount.microsoft.com/#) 
 [@notebook-t.atlassian.net](https://notebook-t.atlassian.net/wiki/spaces/IS/Overview)  
