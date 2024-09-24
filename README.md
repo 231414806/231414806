@@ -93,6 +93,7 @@ Este ejemplo muestra cómo combinar HTML, CSS y JavaScript para crear una págin
 ```bash
 mkdir project-folder
 cd project-folder
+```
  
 2. Crea los archivos  index.html  y  motion-lit.js :
  
