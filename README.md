@@ -1,3 +1,121 @@
+> Aquí tienes un archivo  README.md  que incluye instrucciones y un ejemplo de cómo integrar un módulo JavaScript y estilos CSS en un documento HTML. El ejemplo muestra cómo usar la etiqueta  <script>  para cargar un módulo JavaScript y la etiqueta  <style>  para definir estilos en línea:
+ 
+## Integración de Módulo JavaScript y Estilos CSS en HTML
+ 
+Este ejemplo muestra cómo integrar un módulo JavaScript y aplicar estilos CSS en un documento HTML.
+ 
+### Estructura del Proyecto
+ 
+```plaintext
+project-folder/
+│
+├── index.html
+├── motion-lit.js
+└── README.md
+```
+ 
+### Contenido del Archivo HTML ( index.html )
+ 
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de Módulo y CSS</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+    }
+    .container {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Bienvenido</h1>
+    <p>Este es un ejemplo de cómo integrar un módulo JavaScript y estilos CSS en un documento HTML.</p>
+  </div>
+  <script type="module" src="./motion-lit.js"></script>
+</body>
+</html>
+```
+ 
+### Contenido del Archivo JavaScript 
+`motion-lit.js`
+
+```js
+// motion-lit.js
+
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.container');
+  container.addEventListener('mouseover', () => {
+    container.style.transform = 'scale(1.1)';
+  });
+  container.addEventListener('mouseout', () => {
+    container.style.transform = 'scale(1)';
+  });
+});
+```
+ 
+#### Explicación
+ 
+1. Estructura Básica del HTML:
+ 
+- El archivo HTML tiene una estructura básica con una etiqueta  `<head>`  que incluye los metadatos del documento y los estilos CSS.
+- Los estilos CSS dentro de la etiqueta ` <style> ` establecen el diseño básico del cuerpo `body` y de un contenedor `.container` .
+2. Estilos CSS:
+ 
+- El  body  está configurado para ocupar toda la altura y anchura de la ventana ` height: 100vh; width: 100vw; `.
+- El contenedor  .container  está centrado y tiene una sombra para darle un efecto de tarjeta.
+3. Módulo JavaScript:
+ 
+- El archivo  motion-lit.js  se carga como un módulo con la etiqueta  <script type="module" src="./motion-lit.js"></script> .
+- El script añade eventos  mouseover  y  mouseout  al contenedor para escalar el elemento al pasar el ratón sobre él.
+ 
+Este ejemplo muestra cómo combinar HTML, CSS y JavaScript para crear una página web interactiva y estilizada.
+ 
+### Ejecutar el Ejemplo
+ 
+1. Crea una carpeta para el proyecto:
+ 
+```bash
+mkdir project-folder
+cd project-folder
+ 
+2. Crea los archivos  index.html  y  motion-lit.js :
+ 
+- Pega el código HTML en el archivo  index.html .
+- Pega el código JavaScript en el archivo  motion-lit.js .
+3. Abre  index.html  en tu navegador web.
+ 
+- Deberías ver un contenedor con un título y un párrafo.
+- Al pasar el ratón sobre el contenedor, este se escalará ligeramente.
+ 
+Notas Adicionales
+ 
+- Integración de CSS:
+ 
+- Puedes usar archivos CSS externos en lugar de estilos en línea.
+- Para ello, crea un archivo  style.css  y agrega la siguiente línea en la etiqueta  <head>  del archivo  index.html :
+html Copiar
+<link rel="stylesheet" href="style.css">
+ 
+- Módulos JavaScript:
+ 
+- Puedes usar módulos JavaScript para organizar tu código en archivos separados.
+
 # [Mi proyecto en Azure](https://learn.microsoft.com/es-mx/azure/azure-sql/database/logical-servers?view=azuresql&tabs=portal&source=docs) 
 
  # Aplicaciones/[Creación de documentos](https://github.com/3449708385/bootbase1.0.1/issues/2)/ Creación de aplicaciones de Azure/Autenticación con una Azure App/[Avalonix module builders](https://myaccount.microsoft.com/groups/299e37d6-7446-47f4-a727-3c1da64d3414) 
