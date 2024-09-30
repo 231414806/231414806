@@ -860,9 +860,164 @@ Server=tcp:[nombre-del-servidor].database.windows.net;Database=[nombre-de-la-bas
 
 Para ejecutar este proyecto localmente, sigue estos pasos: 
 
-1. Clona este repositorio. 
-2. [Instrucciones adicionales de instalación, si las hay.] 
+1. **Clona este repositorio.**: 
+`git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY`
 
+2. **Proyecto Android 11: Configuración del Entorno**
+ 
+- Android Studio: Instala Android Studio y asegúrate de tener el SDK de Android 11.
+- **Java**:  Asegúrate de tener Java instalado y configurado en tu sistema.
+- **Chromium Webview**:  Utiliza el comando  package install org.chromium.web  para instalar Chromium Webview en tu dispositivo Android.
+3. **Desarrollo de la Aplicación**:
+ 
+- Estructura del Proyecto: Crea un nuevo proyecto en Android Studio.
+- **Actividad Principal (Java)**: Crea una actividad principal que se encargará de cargar el contenido web.
+- Diseño de la Interfaz (XML): Diseña la interfaz de la actividad principal utilizando XML.  Incluye un WebView para mostrar el contenido web.
+- **Integración del WebView**: En el código Java de la actividad principal, instancia el WebView y carga el contenido web.
+4. **Desarrollo del Contenido Web**:
+ 
+- **Gatsby**:  Utiliza Gatsby para crear el contenido web de tu aplicación.
+- Ejecuta  npm install  para descargar Gatsby, el tema y las dependencias.
+- Inicia el servidor de desarrollo con  npm run develop .
+- El servidor estará disponible en  http://localhost:8000 .
+- **Contenido (MDX)**:  Crea el contenido web en el directorio  content  utilizando MDX, que es una extensión de Markdown.
+- **Actualización de Contenido**: Gatsby observa el sistema de archivos y recarga automáticamente los cambios de contenido en el servidor de desarrollo.
+4. **Integración con GitHub**:
+ 
+- **Control de Versiones**: Utiliza Git para gestionar el código fuente de tu proyecto.
+- **Repositorio de GitHub**: Crea un repositorio en GitHub para almacenar el proyecto.
+- **Solicitudes de Extracción (PR)**: Cuando estés satisfecho con los cambios, envía una solicitud de extracción (PR) a tu repositorio de GitHub.
+- **CI (Integración Continua)**:  Un flujo de trabajo de CI en GitHub publicará tu PR en una página de vista previa.
+- **Fusión de PR**: Una vez que el contenido haya sido revisado, fusiona la solicitud de incorporación de cambios. Esto implementará el sitio web.
+ 
+Ejemplo de Código (Java):
+¡Claro! Aquí tienes el código Java para una aplicación básica de Android que utiliza ARCore para mostrar un objeto 3D en una superficie detectada:
+ 
+Código Java para una Aplicación AR Básica
+ 
+1. Actividad Principal (MainActivity.java):
+ 
+```java
+package com.example.arapp;
+
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+import com.google.ar.core.Anchor;
+import com.google.ar.core.HitResult;
+import com.google.ar.core.Plane;
+import com.google.ar.sceneform.AnchorNode;
+import com.google.ar.sceneform.ux.ArFragment;
+import com.google.ar.sceneform.ux.TransformableNode;
+import com.google.ar.sceneform.rendering.ModelRenderable;
+import android.view.MotionEvent;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+    private ArFragment arFragment;
+    private ModelRenderable yourRenderable; // Variable para el renderable
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.ux_fragment);
+
+        // Carga el renderable del modelo 3D
+        ModelRenderable.builder()
+            .setSource(this, R.raw.your_model) // Reemplaza 'your_model' con el nombre de tu modelo
+            .build()
+            .thenAccept(renderable -> yourRenderable = renderable)
+            .exceptionally(
+                throwable -> {
+                    Toast.makeText(this, "No se pudo cargar el renderable", Toast.LENGTH_SHORT).show();
+                    return null;
+                }
+            );
+
+        // Listener para tocar una superficie detectada
+        arFragment.setOnTapArPlaneListener((HitResult hitResult, Plane plane, MotionEvent motionEvent) -> {
+            if (plane.getType() != Plane.Type.HORIZONTAL_UPWARD_FACING) {
+                return;
+            }
+
+            // Crea un ancla en la superficie
+            Anchor anchor = hitResult.createAnchor();
+
+            // Crea un nodo de ancla para el objeto 3D
+            AnchorNode anchorNode = new AnchorNode(anchor);
+            anchorNode.setParent(arFragment.getArSceneView().getScene());
+
+            // Crea un nodo transformable para controlar la posición del objeto
+            TransformableNode node = new TransformableNode(arFragment.getTransformationSystem());
+            node.setParent(anchorNode);
+
+            // Asigna el renderable al nodo transformable
+            node.setRenderable(yourRenderable);
+
+            // Selecciona el nodo para que el usuario pueda moverlo
+            node.select();
+        });
+    }
+}
+```
+
+2. **Diseño de la Interfaz `activity_main.xml`**:
+ 
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <fragment
+        android:id="@+id/ux_fragment"
+        android:name="com.google.ar.sceneform.ux.ArFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>
+```
+
+3. **Configuración del Renderable**:
+ 
+- Importa un modelo 3D en formato  `.sfb`  o  `.glb` a tu proyecto.
+- **Carga el renderable en tu actividad principal: El código ya está incluido en el ejemplo de  `MainActivity.java`. 
+ 
+Recursos Adicionales
+ 
+- Guía de ARCore para más detalles sobre cómo configurar y utilizar ARCore en tu proyecto.
+- Documentación de Sceneform para aprender a trabajar con objetos 3D en AR.
+ 
+Explicación del Código:
+ 
+1. MainActivity.java:
+ 
+- Se crea un objeto  ArFragment  que se utiliza para gestionar la experiencia de realidad aumentada.
+- Se configura un listener para detectar cuando el usuario toca una superficie horizontal.
+- Se crea un ancla en la superficie detectada.
+- Se crea un nodo de ancla para el objeto 3D y se le asigna el ancla.
+- Se crea un nodo transformable para controlar la posición y rotación del objeto 3D.
+- Se le asigna el renderable del modelo 3D al nodo transformable.
+- Se selecciona el nodo para que el usuario pueda moverlo e interactuar con él.
+2. activity_main.xml:
+ 
+- Se define un  RelativeLayout  como la raíz del diseño.
+- Se coloca el  ArFragment  dentro del  RelativeLayout  para que ocupe toda la pantalla.
+3. Configuración del Renderable:
+ 
+- Se utiliza  ModelRenderable.builder()  para cargar el modelo 3D desde el archivo  R.raw.your_model .
+- Se asigna el renderable cargado a la variable  yourRenderable  en  MainActivity.java .
+ 
+Recuerda:
+ 
+- Reemplaza 'your_model' con el nombre real de tu modelo 3D en el archivo  R.raw .
+- Asegúrate de tener ARCore instalado en tu dispositivo Android.
+- Puedes encontrar más información y ejemplos en la Documentación de ARCore y la Documentación de Sceneform.
+ 
+¡Espero que esto te ayude a crear tu aplicación AR básica!
 -----------------------------------------
 ## Uso
 -----------------------------------------
