@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 - El contenedor  .container  está centrado y tiene una sombra para darle un efecto de tarjeta.
 3. Módulo JavaScript:
  
-- El archivo  motion-lit.js  se carga como un módulo con la etiqueta  <script type="module" src="./motion-lit.js"></script> .
+- El archivo  motion-lit.js  se carga como un módulo con la etiqueta  `<script type="module" src="./motion-lit.js"></script>` .
 - El script añade eventos  mouseover  y  mouseout  al contenedor para escalar el elemento al pasar el ratón sobre él.
  
 Este ejemplo muestra cómo combinar HTML, CSS y JavaScript para crear una página web interactiva y estilizada.
